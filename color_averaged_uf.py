@@ -8,8 +8,8 @@ class ColorAveragedUF(WeightedQuickUnion):
     added to the component.
     '''
     def __init__(self, image):
-        super().__init__(self, image.width * image.height)
-        self.colors = [image.get_pixel(x, y) for x in range(image.width) for y in range(image.height)]
+        super().__init__(image.width * image.height)
+        self.colors = [image.getpixel((x, y)) for y in range(image.height) for x in range(image.width)]
     
     def union(self, p, q):
         '''
@@ -41,4 +41,4 @@ class ColorAveragedUF(WeightedQuickUnion):
         Get the average color of the component containing pixel p
         '''
         #TODO: Implement this method
-        pass
+        return self.colors[self.root(p)]
