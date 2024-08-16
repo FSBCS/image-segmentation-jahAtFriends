@@ -1,4 +1,4 @@
-from . import color_averaged_uf as uf
+from .color_averaged_uf import ColorAveragedUF as UF
 from PIL import Image
 
 def segment_image(image, threshold = 100, min_size = 10):
